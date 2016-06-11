@@ -1,12 +1,16 @@
 package website.iidesign.ai;
 public class Node {
 	private double[] w;
-	private int theta=2;
+	private int theta=4;
 
 	public Node(double... w) {
 		this.w=new double[w.length];
 		for(int i=0;i<w.length;i++)
 			this.w[i]=w[i];
+	}
+	
+	private double sigmoid(double z){
+		return 1/(1+(1/Math.pow(Math.E,z)));
 	}
 	
 	public void setWeight(double... w) {
@@ -33,5 +37,6 @@ public class Node {
 		}
 		return res; 
 	}
+	
 
 }

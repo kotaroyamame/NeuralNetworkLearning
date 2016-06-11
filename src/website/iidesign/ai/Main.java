@@ -14,8 +14,8 @@ public class Main {
 	//教師値
 	static int[] y={
 			0,
-			1,
-			1,
+			0,
+			0,
 			1
 	};
 	public static void main(String[] args) {
@@ -30,7 +30,7 @@ public class Main {
 		n[0].setWeight(0,0);
 		
 		//学習回数
-		for(int l=0;l<30;l++)
+		for(int l=0;l<6;l++)
 		for(int i=0;i<x.length;i++){
 			System.out.println("net="+n[0].hog(x[i][0],x[i][1])+"y="+y[i]);
 		if(n[0].hog(x[i][0],x[i][1])==y[i]){
