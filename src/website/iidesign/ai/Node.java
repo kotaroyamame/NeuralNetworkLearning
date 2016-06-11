@@ -1,7 +1,7 @@
 package website.iidesign.ai;
 public class Node {
 	private double[] w;
-	private int theta=1;
+	private int theta=2;
 
 	public Node(double... w) {
 		this.w=new double[w.length];
@@ -24,7 +24,7 @@ public class Node {
 		int res=0;
 		int wp=0;
 		for(int i=0;i<p.length;i++){
-			wp+=p[i]*w[i];
+			wp+=(p[i]+1)*w[i];
 		}
 		if(wp>=theta){
 			res=1;
