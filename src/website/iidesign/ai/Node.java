@@ -32,7 +32,14 @@ public class Node {
 		}
 		return w[index];
 	}
-	
+	public double getSig(double... p){
+		double wp=0;
+		for(int i=0;i<p.length;i++){
+			wp+=(p[i]+1)*w[i];
+		}
+		return sigmoid(wp);
+	}
+		
 	public int hog(double... p){
 		
 		int res=0;
