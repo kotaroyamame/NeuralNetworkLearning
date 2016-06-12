@@ -13,9 +13,9 @@ public class DeepLeaningModel {
 	};
 	private double[][] y={
 			{0,0,0,0,0,0,0,0,0,0},
-			{0,0,0,0,0,0,0,0,0,1},
-			{0,0,0,0,0,0,0,0,1,0},
-			{0,0,0,0,0,0,0,0,1,1},
+			{0,0,0,0,0,0,0,0,0,0},
+			{0,0,0,0,0,0,0,0,0,0},
+			{0,0,0,0,0,0,0,0,0,0},
 	};
 	//教師値
 	private int[] T={
@@ -28,7 +28,7 @@ public class DeepLeaningModel {
 	public DeepLeaningModel() {
 		double[] _w=new double[L];
 		for(int i=0;i<L;i++)
-			_w[i]=0;
+			_w[i]=10;
 		
 		n=new Node[][]{
 				{new Node(0),new Node(0),new Node(0),new Node(0),new Node(0),new Node(0),new Node(0),new Node(0),new Node(0),new Node(0)},
@@ -37,7 +37,7 @@ public class DeepLeaningModel {
 				};
 		
 	}
-	private void hoge(){
+	public void hoge(){
 		for(int i=0;i<n[0].length;i++){
 			y[0][i]=n[0][i].getSig(x[0][i]);
 		}
@@ -48,8 +48,12 @@ public class DeepLeaningModel {
 				for(int k=0;k<n.length;k++){
 					_nextY[k]=y[i-1][k];
 				}
-				y[i][j]=n[0][j].getSig(_nextY);
+				y[i][j]=n[i][j].getSig(_nextY);
 			}
+		}
+		
+		for(int i=0;i<n[n.length-1].length;i++){
+			System.out.println(y[y.length-1][i]);
 		}
 
 		
