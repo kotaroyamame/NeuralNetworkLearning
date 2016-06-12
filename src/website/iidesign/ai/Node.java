@@ -23,6 +23,16 @@ public class Node {
 		return w;
 	}
 	
+	public double getWeight(int _index) {
+		int index;
+		if(_index<w.length){
+			index=_index;
+		}else{
+			index=w.length-1;
+		}
+		return w[index];
+	}
+	
 	public int hog(double... p){
 		
 		int res=0;
